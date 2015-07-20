@@ -1,5 +1,5 @@
 ## The Monkey Runner `EXAMPLE` for Kono app 
-## This example base on the screen size of Nexus 6, which means that 
+## This example is base on the Nexus 6, which means that 
 ## the touch events may fail due to the different resolution of screen.
 
 from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
