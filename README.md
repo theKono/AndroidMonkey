@@ -22,10 +22,11 @@ This repository contains the test script for Kono Android app.
   * (?) --throttle: app 常會用到網路，可設 1 秒左右
 
 # Monkey runner
-* 寫 code 跑重覆點擊的測試，這個 repository 放 code 的應該都是這類
-* Using Python
+* 寫 Python 跑測試
 * Launch script: `monkeyrunner mymonkey.py`
 * 參考：http://developer.android.com/tools/help/monkeyrunner_concepts.html
+* MonkeyDevice: 控制 Android 裝置，用來送 UI events、安裝／反安裝 application、run applications
+  * ref: [官方文件](http://developer.android.com/intl/ko/tools/help/MonkeyDevice.html)
 
 # Contribute
 1. Fork this repo
