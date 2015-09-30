@@ -1,5 +1,5 @@
 ## The Monkey Runner `EXAMPLE` for Kono app 
-## This example is base on the Nexus 6, which means that 
+## This example is base on the SM-T230NU, which means that 
 ## the touch events may fail due to the different resolution of screen.
 
 from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice
@@ -44,16 +44,11 @@ def main():
 	# Click MyKono button
 	device.touch(725, 1252, "DOWN_AND_UP")
 	MonkeyRunner.sleep(2)
-	
-	# Takes a screenshot
-	result = device.takeSnapshot()
-	# Writes the screenshot to a file
-	result.writeToFile('screenShot/shot2.png','png')
 	##device.drag((550,500),(100,1000), 0.5, 1)
-
-	#
+	# Takes a screenshot
 	now = time.strftime("%Y-%m-%d-%H-%M-%S")
 	imageShot = device.takeSnapshot()
+	# Writes the screenshot to a file
 	imageShot.writeToFile("screenShot/"+now+".png", "png")
 
 	print "End of script"
