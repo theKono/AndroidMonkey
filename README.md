@@ -2,16 +2,16 @@
 This repository contains the test script for Kono Android app.
 
 # Setup
-## ADB
+## ADB setup
 * 裝好 ADB，加到環境變數
 * 打開 '開發人員選項' ：設定 -> 關於手機 -> 軟體版本，連續點 '軟體版本' 直到打開
 * 點選 '開發人員選項' -> 開啓 'USB 偵錯'
 * 測試電腦有抓到手機：`adb devices`
 * 延伸閱讀：http://developer.android.com/tools/help/adb.html
 
-## Monkey Runner
+## Monkey Runner setup
 * 把 androidSDK/tools/monkeyrunner 加到環境變數
-* 就這樣
+
 
 # Monkey Test
 * 用來做壓力測試
@@ -27,6 +27,9 @@ This repository contains the test script for Kono Android app.
 * 參考：http://developer.android.com/tools/help/monkeyrunner_concepts.html
 * MonkeyDevice: 控制 Android 裝置，用來送 UI events、安裝／反安裝 application、run applications
   * ref: [官方文件](http://developer.android.com/intl/ko/tools/help/MonkeyDevice.html)
+* Source code 參考：
+  * https://github.com/AnikiKun/MonkeyRunner_ApkTest/blob/master/ApkTest/ApkTest.py
+  * https://github.com/yeetrack/monkeyrunner
 
 # Contribute
 1. Fork this repo
