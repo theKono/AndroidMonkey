@@ -3,20 +3,19 @@ This repository contains the test script for Kono Android app.
 
 # Setup
 ## ADB setup
-* 裝好 ADB，加到環境變數
+* 裝好 ADB，把 `${android_sdk_folder}/platform-tools/ 加到環境變數`
 * 打開 '開發人員選項' ：設定 -> 關於手機 -> 軟體版本，連續點 '軟體版本' 直到打開
 * 點選 '開發人員選項' -> 開啓 'USB 偵錯'
 * 測試電腦有抓到手機：`adb devices`
 * 延伸閱讀：http://developer.android.com/tools/help/adb.html
 
 ## Monkey Runner setup
-* 把 androidSDK/tools/monkeyrunner 加到環境變數
-
+* 把 `${android_sdk_folder}/tools/` 加到環境變數
+* 在 command line 上打 `monkeyrunner` 看是否有反應
 
 # Monkey Test
 * 用來做壓力測試
 * ex: `adb shell monkey -p com.kono.reader.test -v 500`
-  * `com.kono.reader.test` ：Kono 測試版專用的 package name
 * 參考：http://developer.android.com/tools/help/monkey.html
   * (?) --pct-trackball: app 常常需要 user 滑動後 click
   * (?) --throttle: app 常會用到網路，可設 1 秒左右
