@@ -35,3 +35,6 @@ This repository contains the test script for Kono Android app.
 1. Fork this repo
 2. Add test cases or fix bugs
 3. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/)
+
+# 其他測試相關資源
+* https://testerhome.com
