@@ -1,0 +1,67 @@
+Node.js wd is supported by Gridlastic, run your tests in the cloud at blazing speed on real browsers.
+var wd = require("wd”),
+被寫在package.json file裡
+這些是Node.js 的用法
+
+"use strict";//使用strict mode(嚴格模式) 
+可以讓你的語法變得較嚴謹
+
+_ = require('underscore'),
+Underscore 是一个JavaScript实用库,提供了类似Prototype.js的一些功能,但是没有继承任何JavaScript内置对象。它弥补了部分jQuery没有实现的功能,同时又是Backbone.js必不可少的部分。
+
+
+"use strict";
+require("./helpers/setup”);  //注意檔案名稱跟路徑
+var wd = require("wd"),
+_ = require('underscore'),
+Q = require('q’),    //sample裡面沒有
+serverConfigs = require('./helpers/appiumserver’);
+
+
+
+describe("Node Sample Automation Code", function() {   //整個執行的動作名稱
+  this.timeout(300000);
+  var allPassed = true;
+  before(function() {   
+    var serverConfig = process.env.SAUCE ?
+        serverConfigs.sauce : serverConfigs.local;
+    var driver = wd.promiseChainRemote(serverConfig);
+    require("./helpers/logging").configure(driver);
+
+    var desired = _.clone(require("./helpers/caps").mycapabilities);
+    desired.app = require("./helpers/apps").myTestApp;   //到app連到apk
+    if (process.env.SAUCE) {
+        desired.name = 'Automation Code’; // 此檔案名稱
+        desired.tags = ['sample'];
+  }
+    return driver
+        .init(desired);
+});
+
+after(function() {
+  return driver
+    .sleep(3000)
+    .quit()
+    .finally(function() {
+      if (process.env.SAUCE) {
+        return driver.sauceJobStatus(allPassed);
+    }
+    });
+});
+
+afterEach(function() {
+    allPassed = allPassed && this.currentTest.state === 'passed';
+});
+
+it("Should Click Login Button", function()
+    return driver.elementByAccessibilityId(“Login Button”).click();
+    // Use Appium inspector for inspecting elements
+    });
+});
+以上code來源：
+https://www.built.io/blog/2015/03/start-automating-native-ios-testing-with-appium-using-node-js/
+
+describe跟it的解釋
+http://imweb.io/topic/554a0ed19615e51472f38acc  
+测试工具mocha用法小结
+
